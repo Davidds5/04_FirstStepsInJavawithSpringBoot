@@ -1,6 +1,8 @@
 package br.com.erudio.controllers;
 
 import br.com.erudio.exceptions.UnsurpportedMathOperationsExceptions;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +21,8 @@ public class MathController {
         return convertToDouble(numberOne) + convertToDouble(numberTwo);
     }
 
+    @NotNull
+    @Contract("null -> fail")
     private Double convertToDouble(String strNumber) throws IllegalArgumentException {
         if (strNumber == null || strNumber.isEmpty()) throw new UnsurpportedMathOperationsExceptions("Please set a numeric value!");
         String number = strNumber.replace(",",".");
