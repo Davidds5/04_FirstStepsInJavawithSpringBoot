@@ -26,7 +26,8 @@ public class CustomEntityResponseHandler extends ResponseEntityExceptionHandler 
 
         return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 
-    }  @ExceptionHandler(UnsurpportedMathOperationsExceptions.class)
+    }
+    @ExceptionHandler(UnsurpportedMathOperationsExceptions.class)
     private final ResponseEntity<ExceptionsResponse> handlerBadRequestExceptions(Exception ex, WebRequest request){
         ExceptionsResponse response = new ExceptionsResponse(
                 new Date(),
