@@ -9,7 +9,7 @@ public class NumberConverts {
 
     @NotNull
     @Contract("null -> fail")
-    private Double convertToDouble(String strNumber) throws IllegalArgumentException {
+    public static Double convertToDouble(String strNumber) throws IllegalArgumentException {
         if (strNumber == null || strNumber.isEmpty()) throw new UnsurpportedMathOperationsExceptions("Please set a numeric value!");
 
         String number = strNumber.replace(",",".");
@@ -20,12 +20,12 @@ public class NumberConverts {
 
     }
 
-    private boolean isNumeric(String strNumber) {
+    public static boolean isNumeric(String strNumber) {
         if (strNumber == null || strNumber.isEmpty()) return false;
         String number = strNumber.replace(",",".");
         return (number.matches( "[-+]?[0-9]*\\.?[0-9]+"));
 
 
     }
-    
+
 }
