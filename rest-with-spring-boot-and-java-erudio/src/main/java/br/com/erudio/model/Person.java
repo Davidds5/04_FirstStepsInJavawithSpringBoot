@@ -8,8 +8,8 @@ public class Person implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Long id;
-    private String fistName;
-    private String LastName;
+    private String fisrtName;
+    private String lastName;
     private String address;
     private String gender;
 
@@ -23,12 +23,12 @@ public class Person implements Serializable {
         this.id = id;
     }
 
-    public String getFistName() {
-        return fistName;
+    public String getFisrtName() {
+        return fisrtName;
     }
 
-    public void setFistName(String fistName) {
-        this.fistName = fistName;
+    public void setFisrtName(String fisrtName) {
+        this.fisrtName = fisrtName;
     }
 
     public String getGender() {
@@ -40,11 +40,11 @@ public class Person implements Serializable {
     }
 
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        LastName = lastName;
+        this.lastName = lastName;
     }
 
     public String getAddress() {
@@ -58,11 +58,11 @@ public class Person implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Person person)) return false;
-        return Objects.equals(getId(), person.getId()) && Objects.equals(getFistName(), person.getFistName()) && Objects.equals(getLastName(), person.getLastName()) && Objects.equals(getAddress(), person.getAddress()) && Objects.equals(getGender(), person.getGender());
+        return Objects.equals(getId(), person.getId()) && Objects.equals(getFisrtName(), person.getFisrtName()) && Objects.equals(getLastName(), person.getLastName()) && Objects.equals(getAddress(), person.getAddress()) && Objects.equals(getGender(), person.getGender());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getFistName(), getLastName(), getAddress(), getGender());
+        return Objects.hash(getId(), getFisrtName(), getLastName(), getAddress(), getGender());
     }
 }
